@@ -1,0 +1,222 @@
+/* Genel Stil */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.sticky-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.sticky-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.sticky-menu li {
+    padding: 10px 20px;
+}
+
+.sticky-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Mobile Menu (Initially hidden) */
+.sticky-menu ul {
+    display: flex;
+}
+
+.sticky-menu ul.collapsed {
+    display: none;
+}
+
+/* Background */
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Form */
+section#form {
+    margin: 120px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2); /* Daha koyu arka plan */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Gölgeleme efekti */
+    backdrop-filter: blur(10px); /* Arka plan bulanıklığı */
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Reklam */
+.sticky-ad {
+    position: fixed;
+    right: 20px;
+    top: 10vh;
+    z-index: 1000;
+    width: 20vw;
+    max-width: 250px;
+    height: auto;
+    background: white;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+.sticky-ad img {
+    width: 100%;
+    height: auto;
+    border-radius: 1%;
+}
+
+button#closeAd {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+button#closeAd:hover {
+    background: darkred;
+}
+
+/* Hata Mesajları */
+small.error {
+    color: red;
+    font-size: 12px;
+    visibility: hidden;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .sticky-menu ul {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Initially hidden on small screens */
+    }
+
+    .sticky-menu ul.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    section#form {
+        margin: 20vh 10px;
+        width: 100%;
+    }
+
+    .sticky-ad {
+        right: 10px;
+        top: 10px;
+        width: 250px;
+        height: auto;
+        z-index: 1000;
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+        display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+/* Hide the mobile menu toggle on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    section#form {
+        margin: 20vh 10px;
+        width: 90%;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .sticky-ad {
+        width: 100%;
+        top: 70%;
+        right: 0;
+        z-index: 1000;
+    }
+}
